@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Estradegies Logo Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #2b3a5c;
+    }
+    .header {
+      padding: 40px;
+      text-align: center;
+      background: #fafafa;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .header h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .header p {
+      margin: 0;
+      opacity: 0.6;
+      font-size: 14px;
+    }
+    section {
+      padding: 80px 40px;
+      text-align: center;
+    }
+    section h2 {
+      margin: 0 0 40px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    .light { background: #ffffff; }
+    .cream { background: #f4efe6; }
+    .stone { background: #e8e5dc; }
+    .navy { background: #2b3a5c; }
+    .navy h2 { color: rgba(255,255,255,0.7); }
+    .grid {
+      background-image:
+        linear-gradient(45deg, #e0e0e0 25%, transparent 25%),
+        linear-gradient(-45deg, #e0e0e0 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e0e0e0 75%),
+        linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
+      background-size: 24px 24px;
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+    }
+    .logo {
+      max-width: 540px;
+      width: 100%;
+      height: auto;
+    }
+    .navy .logo {
+      filter: invert(1) brightness(2);
+    }
+    .small-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      padding: 60px 40px;
+      background: #fafafa;
+      border-top: 1px solid #e5e5e5;
+    }
+    .small-row .size-300 { width: 300px; }
+    .small-row .size-180 { width: 180px; }
+    .small-row .size-100 { width: 100px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Estradegies Logo — Placeholder</h1>
+    <p>Wordmark + swoosh, deep navy. Source: <code>assets/logo/estradegies-logo.svg</code></p>
+  </div>
+
+  <section class="light">
+    <h2>On White</h2>
+    <img class="logo" src="assets/logo/estradegies-logo.svg" alt="Estradegies">
+  </section>
+
+  <section class="cream">
+    <h2>On Warm Cream</h2>
+    <img class="logo" src="assets/logo/estradegies-logo.svg" alt="Estradegies">
+  </section>
+
+  <section class="stone">
+    <h2>On Stone</h2>
+    <img class="logo" src="assets/logo/estradegies-logo.svg" alt="Estradegies">
+  </section>
+
+  <section class="navy">
+    <h2>On Navy (Inverted)</h2>
+    <img class="logo" src="assets/logo/estradegies-logo.svg" alt="Estradegies">
+  </section>
+
+  <section class="grid">
+    <h2>On Checkerboard — Confirms Transparency</h2>
+    <img class="logo" src="assets/logo/estradegies-logo.svg" alt="Estradegies">
+  </section>
+
+  <div class="small-row">
+    <img class="logo size-300" src="assets/logo/estradegies-logo.svg" alt="Estradegies at medium size">
+    <img class="logo size-180" src="assets/logo/estradegies-logo.svg" alt="Estradegies at small size">
+    <img class="logo size-100" src="assets/logo/estradegies-logo.svg" alt="Estradegies at tiny size">
+  </div>
+</body>
+</html>

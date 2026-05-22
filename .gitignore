@@ -1,0 +1,22 @@
+# OS-generated junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor scratch
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local env / secrets
+.env
+.env.local
+.env.*.local
+
+# Build output (web/ has its own .gitignore that handles next/node_modules/etc.)

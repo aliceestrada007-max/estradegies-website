@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      <![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+        .wordmark {
+          font-family: 'Cormorant Garamond', 'EB Garamond', 'Cardo', Georgia, serif;
+          font-size: 130px;
+          font-weight: 600;
+          fill: #2b3a5c;
+          letter-spacing: 1px;
+        }
+        .swoosh {
+          fill: none;
+          stroke: #2b3a5c;
+          stroke-width: 3.5;
+          stroke-linecap: round;
+        }
+      ]]>
+    </style>
+  </defs>
+  <text x="450" y="160" text-anchor="middle" class="wordmark">Estradegies</text>
+  <path class="swoosh" d="M 120 200 C 280 150, 620 150, 780 200"/>
+</svg>
