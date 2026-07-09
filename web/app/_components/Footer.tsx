@@ -37,6 +37,11 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <a href="/capabilities.pdf" target="_blank" className="hover:text-cream transition-colors">
+                  Download Capabilities ↓
+                </a>
+              </li>
             </ul>
           </div>
 

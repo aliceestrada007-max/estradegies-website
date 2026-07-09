@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Section } from "../_components/Section";
 import { CTAButton } from "../_components/CTAButton";
 
@@ -18,6 +19,7 @@ type CaseStudyProps = {
   approach: string;
   actions: string[];
   outcomes: string[];
+  images?: { src: string; alt: string }[];
 };
 
 function CaseStudy({
@@ -30,6 +32,7 @@ function CaseStudy({
   approach,
   actions,
   outcomes,
+  images,
 }: CaseStudyProps) {
   return (
     <Section variant={variant}>
@@ -46,16 +49,47 @@ function CaseStudy({
         </CaseSection>
 
         <CaseSection label="The Approach">
-          <p className="text-base md:text-lg leading-relaxed text-ink/85 mb-6">{approach}</p>
-          <ul className="space-y-3">
-            {actions.map((action, i) => (
-              <li key={i} className="flex gap-3 text-base text-ink/85 leading-relaxed">
-                <span className="text-navy/40 mt-1.5 text-xs">●</span>
-                <span>{action}</span>
-              </li>
-            ))}
-          </ul>
+          <div className={images && images.length === 1 ? "flex gap-8 items-start" : ""}>
+            <div className="flex-1">
+              <p className="text-base md:text-lg leading-relaxed text-ink/85 mb-6">{approach}</p>
+              <ul className="space-y-3">
+                {actions.map((action, i) => (
+                  <li key={i} className="flex gap-3 text-base text-ink/85 leading-relaxed">
+                    <span className="text-navy/40 mt-1.5 text-xs">●</span>
+                    <span>{action}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {images && images.length === 1 && (
+              <div className="flex-shrink-0 w-40">
+                <Image
+                  src={images[0].src}
+                  alt={images[0].alt}
+                  width={160}
+                  height={320}
+                  className="w-full object-contain rounded-sm"
+                />
+              </div>
+            )}
+          </div>
         </CaseSection>
+
+        {images && images.length > 1 && (
+          <div className="mb-12 flex gap-6">
+            {images.map((img, i) => (
+              <div key={i} className="flex-1 overflow-hidden rounded-sm">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        )}
 
         <CaseSection label="The Outcome" last>
           <ul className="space-y-3">
@@ -127,6 +161,10 @@ export default function Impact() {
           "Nonprofit Executive of the Year — Non-Profit Pro Magazine (2017)",
           "Regional and national media coverage including CNN, Wall Street Journal, USA Today, Southern Living, and Garden & Gun",
         ]}
+        images={[
+          { src: "/wilma-lee.jpg", alt: "The historic skipjack Wilma Lee under sail on the Chesapeake Bay" },
+          { src: "/oyster-roast.jpg", alt: "Crowds at the annual Oyster Roast & Sock Burning, a perennial sell-out event" },
+        ]}
       />
 
       <CaseStudy
@@ -148,6 +186,9 @@ export default function Impact() {
           "Named one of the 100 Best Events in North America by the American Bus Association (2009)",
           "Long-term grant relationships and sustained financial footing",
         ]}
+        images={[
+          { src: "/Gettysburg Festival.png", alt: "Gettysburg Festival — June 18-27, Music, Culinary Arts, Theater, Visual Arts" },
+        ]}
       />
 
       <CaseStudy
@@ -166,6 +207,9 @@ export default function Impact() {
           "Top 5 Main Street community accreditation in Pennsylvania",
           "Pennsylvania Main Street Award — Outstanding Community Partnership with the NPS",
           "A blueprint combining historic preservation with sustainable earned income",
+        ]}
+        images={[
+          { src: "/Mainstreet.png", alt: "Historic Gettysburg — A Downtown Gettysburg Guide" },
         ]}
       />
 
@@ -204,9 +248,20 @@ export default function Impact() {
               <p className="text-xs tracking-[0.25em] uppercase text-navy/60 mb-4 font-medium">
                 Walt Disney Imagineering · Celebration, FL
               </p>
-              <p className="text-base leading-relaxed text-ink/85">
-                The signature holiday campaign Alice created while consulting at Disney's Town of Celebration. Drove a 44% increase in retail sales, earned international recognition, and remains a cherished annual tradition in Celebration today.
-              </p>
+              <div className="flex gap-6 items-start">
+                <p className="flex-1 text-base leading-relaxed text-ink/85">
+                  The signature holiday campaign Alice created while consulting at Disney's Town of Celebration. Drove a 44% increase in retail sales, earned international recognition, and remains a cherished annual tradition in Celebration today.
+                </p>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/now-snowing.png"
+                    alt="Now Snowing Nightly — Market Street at Celebration holiday campaign"
+                    width={140}
+                    height={280}
+                    className="rounded-sm object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -218,16 +273,16 @@ export default function Impact() {
           <div className="text-center">
             <div className="text-navy/30 font-serif text-7xl leading-none mb-2">"</div>
             <p className="text-xl font-serif italic text-ink/70 leading-relaxed">
-              Testimonial #2 — to be gathered. Ideal: a former board chair speaking to Alice's executive leadership.
+              Having served alongside Alice for more than 11 years on the Annapolis Maritime Museum Board, I've seen firsthand the vision, professionalism, and heart she brings to leadership. She took the museum to levels that were never considered early on and more importantly sustained and grew the museum, our programs and community engagement. Alice's background in marketing, including her experience with Disney, gave her a unique ability to connect people to mission in a meaningful way. She has an incredible talent for storytelling, relationship-building, and inspiring both teams and communities to believe in something bigger.
             </p>
-            <p className="mt-6 text-sm text-muted">— Name, Title, Organization</p>
+            <p className="mt-6 text-sm text-muted">— Michael Hughes, Managing Partner – MH Media Strategies &amp; AMM Board Member</p>
           </div>
           <div className="text-center pt-8 border-t border-line/40">
             <div className="text-navy/30 font-serif text-7xl leading-none mb-2">"</div>
             <p className="text-xl font-serif italic text-ink/70 leading-relaxed">
-              Testimonial #3 — to be gathered. Ideal: a peer ED or funder speaking to Alice's strategic insight.
+              Having worked closely with Alice, I can confidently say her wealth of nonprofit knowledge and strategic insight is unmatched. Her exceptional guidance has been instrumental to our organization's success, and anyone looking to elevate their nonprofit would be lucky to partner with her.
             </p>
-            <p className="mt-6 text-sm text-muted">— Name, Title, Organization</p>
+            <p className="mt-6 text-sm text-muted">— Patricia Slaughter, Founder, The Bernie House</p>
           </div>
         </div>
       </Section>

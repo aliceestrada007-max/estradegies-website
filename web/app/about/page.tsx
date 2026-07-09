@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Section } from "../_components/Section";
 import { CTAButton } from "../_components/CTAButton";
 
@@ -46,14 +47,15 @@ export default function About() {
           About Alice
         </h1>
 
-        <div className="mt-12 flex flex-col md:flex-row gap-12 items-start">
-          <div className="md:w-64 flex-shrink-0">
-            <div className="w-full aspect-[3/4] bg-stone border border-line flex items-center justify-center font-serif text-navy/40 text-6xl">
-              AE
-            </div>
-            <p className="mt-3 text-xs text-muted text-center">
-              Headshot to be added
-            </p>
+        <div className="mt-12 flex flex-row gap-12 items-start">
+          <div className="w-56 flex-shrink-0">
+            <Image
+              src="/headshot.jpg"
+              alt="Alice Estrada"
+              width={256}
+              height={341}
+              className="w-full rounded-sm object-cover"
+            />
           </div>
 
           <div className="flex-1 max-w-2xl">

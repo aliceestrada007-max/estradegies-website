@@ -21,29 +21,23 @@ type Service = {
 const services: Service[] = [
   {
     number: "01",
-    title: "Interim Executive Leadership",
-    body: "For organizations in transition. Estradegies provides hands-on executive leadership during gaps between executive directors, periods of restructuring, or moments of accelerated growth — bringing stability, structure, and visible results from day one.",
-    duration: "Engagements typically run three months with the option to extend.",
-  },
-  {
-    number: "02",
     title: "Organizational Sustainability & Strategic Planning",
     body: "A focused three-month strategic planning sprint that aligns mission, programs, and finances for long-term viability. Substantially more succinct than a typical 12-month plan — and built to be implemented, not shelved.",
     proof: "This work draws on Alice's track record of nonprofit business discipline: at Annapolis Maritime Museum & Park, twelve consecutive fiscal years closed in surplus under her leadership, with rigorous attention to ROI, expense management, and Mission + Margin alignment. Strong financial stewardship is what allows nonprofits to weather downturns, reinvest in programs, and grow with confidence.",
   },
   {
-    number: "03",
+    number: "02",
     title: "Revenue Diversification & Growth Strategy",
     body: "A holistic approach to financial sustainability across philanthropy, earned revenue, grants, partnerships, memberships, and events.",
     proof: "Past engagements have produced 6× organizational revenue growth and $1.5M in state grants secured.",
   },
   {
-    number: "04",
+    number: "03",
     title: "Board & Governance Development",
     body: "Strengthening accountability, engagement, and the executive–board partnership. Includes board recruitment strategy, governance reviews, board retreats, and committee structure design.",
   },
   {
-    number: "05",
+    number: "04",
     title: "Marketing, Brand & Communications Strategy",
     body: "Strong programs deserve strong marketing — and underdeveloped marketing is one of the most common shortcomings in the nonprofit sector. With three decades of marketing leadership across the private and nonprofit sectors, this is one of Alice's deepest areas of expertise.",
     proof: "At Annapolis Maritime Museum & Park, Alice built and managed a portfolio of 27 distinct products and programs — from local member experiences, to summer camps for families, to heritage sails aboard the historic skipjack Wilma Lee — each with its own audience, messaging, and channel strategy. Signature events sold out.",
@@ -57,14 +51,20 @@ const services: Service[] = [
     pressNote: "Past results include features in CNN, the Wall Street Journal, USA Today, Southern Living, and Garden & Gun.",
   },
   {
-    number: "06",
+    number: "05",
     title: "Event Design & Implementation",
     body: "Creating mission-aligned, revenue-generating events with national recognition — including sold-out signature events at Annapolis Maritime Museum & Park, a 10-day arts festival recognized as one of the 100 Best Events in North America by the American Bus Association, and multiple International Festival & Events Association awards.",
   },
   {
-    number: "07",
+    number: "06",
     title: "Community & Government Partnerships",
     body: "Building collaborative relationships across public, private, and nonprofit sectors — including local government, state agencies, business communities, and the National Park Service.",
+  },
+  {
+    number: "07",
+    title: "Interim Executive Leadership",
+    body: "For organizations in transition. Estradegies provides hands-on executive leadership during gaps between executive directors, periods of restructuring, or moments of accelerated growth — bringing stability, structure, and visible results from day one.",
+    duration: "",
   },
 ];
 
@@ -146,7 +146,6 @@ export default function Services() {
               <strong className="text-navy">
                 custom proposal with defined deliverables, a clear timeline, and transparent investment.
               </strong>{" "}
-              Typical engagements run <strong>three to six months.</strong>
             </p>
           </div>
         </div>

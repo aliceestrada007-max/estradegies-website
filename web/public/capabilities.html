@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Estradegies — Capabilities</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #2b3a5c;
+    --navy-dark: #1f2a44;
+    --cream: #f8f5ed;
+    --stone: #e8e5dc;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #d8d2c4;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 9pt;
+    line-height: 1.5;
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.55in 0.65in;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32pt;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--muted);
+    text-align: right;
+    max-width: 280px;
+  }
+
+  /* LAYOUT */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 24px;
+  }
+
+  /* SECTIONS */
+  .section { margin-bottom: 16px; }
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+  .section p {
+    color: var(--ink);
+    font-size: 9pt;
+    line-height: 1.55;
+  }
+
+  /* SERVICES */
+  .services-list { list-style: none; }
+  .services-list li {
+    padding: 4px 0;
+    font-size: 8.5pt;
+    border-bottom: 1px solid var(--line);
+    line-height: 1.45;
+  }
+  .services-list li:last-child { border-bottom: none; }
+  .services-list strong {
+    color: var(--navy);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1px;
+  }
+  .services-list .desc {
+    color: var(--muted);
+    font-size: 8pt;
+  }
+
+  /* STATS */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 10px;
+    align-items: baseline;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15pt;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .stat-label {
+    font-size: 8pt;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  /* SIDEBAR */
+  .sidebar {}
+
+  /* LEADERSHIP */
+  .leadership-list { list-style: none; }
+  .leadership-list li {
+    padding: 4px 0;
+    font-size: 8.5pt;
+    border-bottom: 1px solid var(--line);
+  }
+  .leadership-list li:last-child { border-bottom: none; }
+  .leadership-list .org { color: var(--navy); font-weight: 600; }
+  .leadership-list .role { color: var(--muted); font-size: 7.5pt; }
+
+  /* PRESS */
+  .press {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9.5pt;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    line-height: 1.8;
+  }
+
+  /* HOW WE WORK */
+  .how-box {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 12px 14px;
+    border-radius: 1px;
+  }
+  .how-box .section-label {
+    color: var(--cream);
+    border-bottom-color: rgba(255,255,255,0.2);
+  }
+  .how-box p { color: rgba(248,245,237,0.9); font-size: 8.5pt; }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--stone);
+    padding: 12px 14px;
+    border-radius: 1px;
+    margin-top: 12px;
+  }
+  .contact-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .contact-line {
+    font-size: 8pt;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .contact-line span { color: var(--muted); margin-right: 4px; }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 18px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 7.5pt;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  @media print {
+    body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="wordmark">Estradegies</div>
+    <div class="tagline">Mission + Margin<br>Nonprofit Consulting for Durable Impact</div>
+  </div>
+
+  <div class="body">
+    <!-- LEFT COLUMN -->
+    <div class="left">
+
+      <div class="section">
+        <div class="section-label">About</div>
+        <p><strong>Alice Estrada</strong> is a seasoned nonprofit executive and business-minded consultant with more than two decades of experience strengthening mission-driven organizations. Estradegies partners with nonprofits to align strategy, revenue, and leadership for long-term impact — combining executive leadership rigor with the accessibility small grassroots nonprofits need.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Services</div>
+        <ul class="services-list">
+          <li><strong>Interim Executive Leadership</strong><span class="desc">Stability and results during leadership transitions</span></li>
+          <li><strong>Organizational Sustainability &amp; Strategic Planning</strong><span class="desc">A focused three-month strategic sprint aligned to mission, programs, and finances</span></li>
+          <li><strong>Revenue Diversification &amp; Growth Strategy</strong><span class="desc">Philanthropy, earned revenue, grants, partnerships, memberships, and events</span></li>
+          <li><strong>Board &amp; Governance Development</strong><span class="desc">Strengthening accountability and the executive–board partnership</span></li>
+          <li><strong>Marketing, Brand &amp; Communications Strategy</strong><span class="desc">Audience segmentation, program positioning, event marketing, and earned media</span></li>
+          <li><strong>Event Design &amp; Implementation</strong><span class="desc">Mission-aligned, revenue-generating events with national recognition</span></li>
+          <li><strong>Community &amp; Government Partnerships</strong><span class="desc">Building relationships across public, private, and nonprofit sectors</span></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Signature Impact</div>
+        <div class="stats-grid">
+          <div class="stat-num">6×</div><div class="stat-label">Revenue growth at Annapolis Maritime Museum &amp; Park</div>
+          <div class="stat-num">12/12</div><div class="stat-label">Consecutive fiscal years closed in surplus at Annapolis Maritime</div>
+          <div class="stat-num">$5M</div><div class="stat-label">Capital campaign delivered</div>
+          <div class="stat-num">500%</div><div class="stat-label">Ticket sales lift at Gettysburg Festival</div>
+          <div class="stat-num">$1.5M</div><div class="stat-label">State grants secured for Gettysburg Festival sustainability</div>
+          <div class="stat-num">★★★★</div><div class="stat-label">Charity Navigator Four-Star · Candid Platinum · MD Nonprofits Standard of Excellence</div>
+          <div class="stat-num">2017</div><div class="stat-label">Nonprofit Executive of the Year — Non-Profit Pro Magazine</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">As Featured In</div>
+        <div class="press">CNN &nbsp;·&nbsp; Wall Street Journal &nbsp;·&nbsp; USA Today &nbsp;·&nbsp; Southern Living &nbsp;·&nbsp; Garden &amp; Gun</div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="sidebar">
+
+      <div class="section">
+        <div class="section-label">Selected Leadership</div>
+        <ul class="leadership-list">
+          <li>
+            <div class="org">Annapolis Maritime Museum &amp; Park</div>
+            <div class="role">President &amp; CEO · 2013–2025</div>
+          </li>
+          <li>
+            <div class="org">Gettysburg Festival</div>
+            <div class="role">Executive Director · 2007–2011</div>
+          </li>
+          <li>
+            <div class="org">Main Street Gettysburg</div>
+            <div class="role">Executive Director · 2003–2007</div>
+          </li>
+          <li>
+            <div class="org">Walt Disney Imagineering</div>
+            <div class="role">Consultant · Celebration, FL · 1998–2000</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="how-box">
+        <div class="section-label">How We Work</div>
+        <p>Every engagement begins with a <strong>free 30-minute discovery call</strong>. From there, Estradegies builds a custom proposal with defined deliverables, a clear timeline, and transparent investment.</p>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-name">Alice Estrada</div>
+        <div class="contact-line"><span>Phone</span> 717-253-6174</div>
+        <div class="contact-line"><span>Email</span> estradegies@gmail.com</div>
+        <div class="contact-line"><span>Web</span> Estradegies.com</div>
+        <div class="contact-line"><span>Based</span> Annapolis, MD</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    Estradegies serves clients regionally and nationally — remote engagements welcome.
+  </div>
+
+</body>
+</html>

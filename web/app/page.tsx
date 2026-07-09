@@ -19,7 +19,13 @@ const services = [
   { title: "Community & Government Partnerships", body: "Building collaborative relationships across sectors" },
 ];
 
-const pressOutlets = ["CNN", "Wall Street Journal", "USA Today", "Southern Living", "Garden & Gun"];
+const pressOutlets = [
+  { name: "CNN" },
+  { name: "Wall Street Journal", href: "https://www.wsj.com/articles/its-almost-boating-season-and-you-know-what-that-means-time-to-light-your-socks-on-fire-1491760259" },
+  { name: "USA Today" },
+  { name: "Southern Living" },
+  { name: "Garden & Gun" },
+];
 const clients = [
   "Annapolis Maritime Museum & Park",
   "Gettysburg Festival",
@@ -110,13 +116,16 @@ export default function Home() {
           </h3>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-14 text-ink/60 font-serif text-xl md:text-2xl italic">
             {pressOutlets.map((outlet, i) => (
-              <span key={outlet}>
-                {outlet}
+              <span key={outlet.name}>
+                {outlet.href ? (
+                  <a href={outlet.href} target="_blank" rel="noopener noreferrer" className="hover:text-navy transition-colors">
+                    {outlet.name}
+                  </a>
+                ) : outlet.name}
                 {i < pressOutlets.length - 1 && <span className="ml-8 md:ml-14 text-ink/20" aria-hidden>·</span>}
               </span>
             ))}
           </div>
-          <p className="mt-6 text-xs text-muted">Publication logos to be added</p>
         </div>
       </Section>
 
@@ -134,7 +143,6 @@ export default function Home() {
               </span>
             ))}
           </div>
-          <p className="mt-6 text-xs text-muted">Client logos to be added</p>
         </div>
       </Section>
 
@@ -143,9 +151,9 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="text-navy/30 font-serif text-7xl leading-none mb-2">"</div>
           <p className="text-xl md:text-2xl font-serif italic text-ink/70 leading-relaxed">
-            Testimonial to be added once gathered — ideal source: a former board chair, ED peer, or funder.
+            Alice is a rare leader who combines strategic vision with the ability to inspire people to achieve extraordinary results. During her tenure, she transformed our organization, strengthened our financial sustainability, and built a culture centered on excellence and community impact. Her integrity, creativity, and passion make her an invaluable partner to any nonprofit seeking to grow and thrive.
           </p>
-          <p className="mt-6 text-sm text-muted">— Name, Title, Organization</p>
+          <p className="mt-6 text-sm text-muted">— Carol Sisco, Former Board Chair, Annapolis Maritime Museum &amp; Park</p>
         </div>
       </Section>
 
