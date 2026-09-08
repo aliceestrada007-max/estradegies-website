@@ -15,13 +15,73 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://estradegies.com";
+const siteTitle = "Estradegies — Nonprofit Strategy & Sustainability";
+const siteDescription =
+  "Estradegies partners with nonprofits and mission-driven organizations to align strategy, revenue, and leadership for durable, long-term impact.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Estradegies — Nonprofit Strategy & Sustainability",
+    default: siteTitle,
     template: "%s | Estradegies",
   },
-  description:
-    "Estradegies partners with nonprofits and mission-driven organizations to align strategy, revenue, and leadership for durable, long-term impact.",
+  description: siteDescription,
+  keywords: [
+    "Estradegies",
+    "nonprofit consulting",
+    "nonprofit strategy",
+    "Alice Estrada",
+    "nonprofit sustainability",
+    "nonprofit revenue diversification",
+    "interim executive leadership nonprofit",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Estradegies",
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: "/headshot.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "Alice Estrada, Founder of Estradegies",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/headshot.jpg"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Estradegies",
+  alternateName: "Estradegies Nonprofit Consulting",
+  url: siteUrl,
+  logo: `${siteUrl}/logo/estradegies-logo.svg`,
+  image: `${siteUrl}/headshot.jpg`,
+  description: siteDescription,
+  email: "estradegies@gmail.com",
+  telephone: "+1-717-253-6174",
+  areaServed: "US",
+  sameAs: ["https://www.linkedin.com/in/alice-estrada-097245a/"],
+  founder: {
+    "@type": "Person",
+    name: "Alice Estrada",
+    jobTitle: "Founder & Principal",
+    sameAs: ["https://www.linkedin.com/in/alice-estrada-097245a/"],
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +93,10 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
