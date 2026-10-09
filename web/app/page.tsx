@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Section } from "./_components/Section";
 import { CTAButton } from "./_components/CTAButton";
@@ -67,18 +68,30 @@ export default function Home() {
 
       {/* ABOUT TEASER */}
       <Section>
-        <div className="max-w-3xl">
-          <p className="text-lg md:text-xl leading-relaxed text-ink/85">
-            Founded by{" "}
-            <strong className="text-navy font-semibold">Alice Estrada</strong> —
-            former President & CEO of Annapolis Maritime Museum & Park and Nonprofit Executive of the Year (2017) — Estradegies brings two decades of executive leadership and business discipline to the small grassroots nonprofits that need it most.
-          </p>
-          <Link
-            href="/about"
-            className="mt-8 inline-block text-navy font-medium tracking-wide border-b border-navy/40 hover:border-navy transition-colors"
-          >
-            Read Alice's Story →
-          </Link>
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          <div className="max-w-xl">
+            <p className="text-lg md:text-xl leading-relaxed text-ink/85">
+              Founded by{" "}
+              <strong className="text-navy font-semibold">Alice Estrada</strong> —
+              former President & CEO of Annapolis Maritime Museum & Park and Nonprofit Executive of the Year (2017) — Estradegies brings two decades of executive leadership and business discipline to the small grassroots nonprofits that need it most.
+            </p>
+            <Link
+              href="/about"
+              className="mt-8 inline-block text-navy font-medium tracking-wide border-b border-navy/40 hover:border-navy transition-colors"
+            >
+              Read Alice's Story →
+            </Link>
+          </div>
+          <div className="flex-shrink-0">
+            <Image
+              src="/headshot.jpg"
+              alt="Alice Estrada"
+              width={320}
+              height={320}
+              className="rounded-full object-cover shadow-lg"
+              priority
+            />
+          </div>
         </div>
       </Section>
 
